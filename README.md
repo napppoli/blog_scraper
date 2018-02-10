@@ -14,5 +14,6 @@ python main.py -f <filename> -url <blog_url> -n <number_of_posts_to_save>
 - filename: name of file to write the texts to.
 - url: main URL of the target blog. ex) https://d.hatena.ne.jp/hoge/
 - n: number of posts to save
+
 Other blog service supports to be added soon...
 
