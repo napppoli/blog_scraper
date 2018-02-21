@@ -24,7 +24,7 @@ filename=args.filename
 url = 'http://www.geocities.jp/timeway/kougi-'
 
 with open(filename, 'w') as f:
-    f.write('世界史講義録')
+    f.write('世界史講義録\n')
 
 
 n=135
