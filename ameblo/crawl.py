@@ -15,4 +15,4 @@ def get_body(filename,url):
     print('{} {}'.format(date,title))
     body = soup.find("div", {"class", "skin-entryBody"}).text
     with open(filename, 'a') as f:
-        f.write('{}\n{}\n{}\n'.format(date,title,body))
+        f.write('{}\n{}\n{}\n\n'.format(date,title,body))
