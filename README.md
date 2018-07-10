@@ -7,7 +7,7 @@ save your favorite blog posts onto local txt file
 - [Requests](http://docs.python-requests.org/en/master/)
 
 ## How to use
-For Hatena Diary:
+For Hatena Diary & Ameba blog:
 ```
 python main.py -f <filename> -url <blog_url> -n <number_of_posts_to_save>
 ```
