@@ -3,12 +3,14 @@
 from bs4 import BeautifulSoup
 import requests
 import argparse
+import time
 
 def get_url(url,i):
     return url+str(i)+'.html'
 
 def get_body(filename,url):
     html = requests.get(url)
+    time.sleep(1)
     html.encoding = html.apparent_encoding
     content=html.text.replace('<BR>','\n')
     soup = BeautifulSoup(content, "lxml")

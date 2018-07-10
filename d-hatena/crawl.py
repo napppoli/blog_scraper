@@ -2,8 +2,11 @@
 #coding: utf-8
 from bs4 import BeautifulSoup
 import requests
+import time
+
 def get_body(filename,url):
     html = requests.get(url)
+    time.sleep(1)
     soup = BeautifulSoup(html.content, "lxml").find(id="days")
     date = soup.find(class_ = "date").string
     title = soup.find(class_="title").string
