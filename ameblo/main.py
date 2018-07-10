@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
 import requests
+import argparse
+import time
 from crawl import get_body
 from next_node import get_url
-import argparse
 
 parser = argparse.ArgumentParser(description='Save blog posts onto local .txt file')
 parser.add_argument('--filename','-f',type=str,required=True,help='filename to save blog posts')
@@ -20,6 +21,7 @@ def main():
     suffix= '' if url[-1]=='/' else '/'
     url += suffix
     html = requests.get(url)
+    time.sleep(1)
     soup = BeautifulSoup(html.content, "lxml")
     url += soup.find("a", {"class", "skinArticleTitle"})["href"].split('/')[-1]
     for i in range(n):

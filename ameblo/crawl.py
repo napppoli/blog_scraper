@@ -2,8 +2,11 @@
 #coding: utf-8
 from bs4 import BeautifulSoup
 import requests
+import time
+
 def get_body(filename,url):
     html = requests.get(url)
+    time.sleep(1)
     html.encoding = html.apparent_encoding
     content=html.text.replace('<br>','\n')
     soup = BeautifulSoup(content, "lxml")
