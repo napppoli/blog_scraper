@@ -21,8 +21,6 @@ def main():
     time.sleep(1)
     soup = BeautifulSoup(html.content, "lxml")
     url = soup.find("a", {"class","entry-title-link"}).get('href')
-    #url = soup.find("a", {"class","entry-title-link"})
-    print(url)
     n=args.n
     for i in range(n):
         get_body(filename,url)
