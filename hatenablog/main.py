@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
 import requests
 import argparse
@@ -21,9 +19,10 @@ def main():
     
     html = requests.get(url)
     time.sleep(1)
-    soup = BeautifulSoup(html.content, "lxml").find(id="hatena-archive")
-    url = soup.find(class_ = "archive archive-date").find('a').get('href')
-    
+    soup = BeautifulSoup(html.content, "lxml")
+    url = soup.find("a", {"class","entry-title-link"}).get('href')
+    #url = soup.find("a", {"class","entry-title-link"})
+    print(url)
     n=args.n
     for i in range(n):
         get_body(filename,url)
